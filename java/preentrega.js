@@ -24,7 +24,7 @@ function compraAuto(){
 
     if (cantidadAuto >=1 && cantidadCuotas >= 1){
         alert("tu solicitud por " + cantidadAuto + " autos en " + cantidadCuotas + " cuotas, fue aprovada, a continuacion te mostraremos como quedaria tu plan de pago" )
-        console.log("solicitud aprovada)")
+        console.log("solicitud aprovada")
         calculoCompra(precioAuto, cantidadAuto,cantidadCuotas)
     }
     else {
