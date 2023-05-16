@@ -33,10 +33,10 @@ function compraAuto(){
     }
 }
 
-function calculoCompra(precioAuto, cantidadAuto, cantidadCuotas, nombreCliente) {
+function calculoCompra(precioAuto, cantidadAuto, cantidadCuotas) {
     let procesoCompra = (precioAuto + cantidadAuto) / cantidadCuotas;
     alert("Felicitaciones por tu compra!");
-    console.log("La compra de " + nombreCliente + " cuenta con " + cantidadAuto + " autos, en " + cantidadCuotas + " cuotas, divididas de la siguiente manera:");
+    console.log("Se realizo la comrpa de " + cantidadAuto + " autos, en " + cantidadCuotas + " cuotas, divididas de la siguiente manera:");
 
     for (let i = 1; i <= cantidadCuotas; i++) {
         console.log("Cuota N° " + i + ": " + procesoCompra);
