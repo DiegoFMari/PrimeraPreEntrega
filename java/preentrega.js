@@ -1,46 +1,54 @@
-function datosPersonales(){
-    let nombreCliente = prompt("Ingrese su nombre")
-    let edadCliente=parseInt(prompt("Ingrese su edad:"))
 
-    if(nombreCliente!=='' && edadCliente>=18){
-    alert("Felicitaciones! cumples con nuestros requisitos")
-    compraAuto()}
+
+const vehiculos= [
+    {opcion:1, nombre: "GOL TREND",marca:"WOLKWAGEN", modelo: 2019, color: "GRIS", precio: 2400000},
+    {opcion:2, nombre: "MOBY",marca:"FIAT", modelo: 2018, color: "ROJO", precio: 2100000},
+    {opcion:3, nombre: "CLIO 2",marca:"RENAULT", modelo: 2019, color: "BLANCO", precio: 2200000},
+    {opcion:4, nombre: "YARIS",marca:"TOYOTA", modelo: 2021, color: "ROJO", precio: 3400000},
+    {opcion:5, nombre: "CORSA",marca:"CHEVROLET", modelo: 2017, color: "blanco", precio: 1900000},
+    {opcion:6, nombre: "PALIO",marca:"FIAT", modelo: 2020, color: "GRIS", precio: 2000000},
+]
+
+function seleccionarAuto(opcion){
+        let seleccionRealizada=vehiculos.find((vehiculo)=> vehiculo.opcion===parseInt(opcion))
+        return seleccionRealizada
+}
+
+
+alert("Bienvenid@ a 'TU AUTO HOY'");
+
+function seleccionarOpcion() {
+  let opcion = prompt("Ingrese la opción del auto que desea comprar");
+  let autoElegido = seleccionarAuto(opcion);
+  console.log(autoElegido);
+  alert("Seleccionaste un " + autoElegido.marca + " " + autoElegido.nombre);
+  let confirmacion = confirm("¿Deseas continuar?");
+
+  if (confirmacion === true) {
+    let seguros = confirm("¿Deseas ver nuestro plan de hasta 72 cuotas sin interes?");
+
+    if (seguros === true) {
+        
+      let cuotas = prompt("Seleccione la cantidad de cuotas (hasta 72 cuotas)");
+      if (cuotas<=72){
+      calcularCuotas(autoElegido, cuotas);}
+        else 
+        {alert("Excediste el maximo de cuotas, recuerda que el maximo son 72")}
+        } 
     else {
-        alert("Lo siento, no pudimos procesar tus datos. Por favor, para reintentar preciona F5")
+      alert("Tu saldo por pagar a contado sera de " + autoElegido.precio);
     }
+  } else {
+    alert("¡Estamos siempre a tu disposición! Presiona F5 si cambias de opinión");
+  }
 }
 
-
-
-
-
-
-const precioAuto = 2500000
-
-function compraAuto(){
-    alert("tenemos promociones en autos usados en $2.500.000")
-    let cantidadAuto = parseInt(prompt("Ingresa la cantidad de autos que quieres comprar:"))
-    let cantidadCuotas = parseInt(prompt("Ingresa la cantidad de cuotas que quieres para tu compra (maximo 48):"))
-
-    if (cantidadAuto >=1 && cantidadCuotas >= 1){
-        alert("tu solicitud por " + cantidadAuto + " autos en " + cantidadCuotas + " cuotas, fue aprovada, a continuacion te mostraremos como quedaria tu plan de pago" )
-        console.log("solicitud aprovada")
-        calculoCompra(precioAuto, cantidadAuto,cantidadCuotas)
-    }
-    else {
-        alert("tu cantidad de cuotas exede nuestra promocion!")
-        console.error("cantidad de cuotas superada")
-    }
+function calcularCuotas(autoElegido, cuotas) {
+  for (let i = 1; i <= cuotas; i++) {
+    let planCuotas = autoElegido.precio / cuotas;
+    console.log("Cuota N° " + i + ": " + planCuotas);
+  }
 }
 
-function calculoCompra(precioAuto, cantidadAuto, cantidadCuotas) {
-    let procesoCompra = (precioAuto + cantidadAuto) / cantidadCuotas;
-    alert("Felicitaciones por tu compra!");
-    console.log("Se realizo la comrpa de " + cantidadAuto + " autos, en " + cantidadCuotas + " cuotas, divididas de la siguiente manera:");
+seleccionarOpcion();
 
-    for (let i = 1; i <= cantidadCuotas; i++) {
-        console.log("Cuota N° " + i + ": " + procesoCompra);
-    }
-}
-
-datosPersonales()

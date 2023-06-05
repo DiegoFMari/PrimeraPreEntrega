@@ -1,0 +1,84 @@
+body {
+    background-color: thistle;
+}
+
+.titulo {
+    background-color: red;
+    color: aliceblue;
+    font-style: oblique;
+    border: black 2px solid;
+    border-radius: 8px;
+    text-align: center;
+}
+
+h3 {
+    background-color: gray;
+    color: aliceblue;
+    text-align: center;
+    border: black 2px solid;
+    border-radius: 8px;
+}
+
+/* grid img */
+.containerAutos {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-auto-columns: 1fr;
+    grid-auto-rows: 1fr;
+    gap: 15px 15px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "auto1 auto2"
+        "auto3 auto4"
+        "auto5 auto6";
+}
+
+.auto1 {
+    grid-area: auto1;
+}
+
+.auto2 {
+    grid-area: auto2;
+}
+
+.auto3 {
+    grid-area: auto3;
+}
+
+.auto4 {
+    grid-area: auto4;
+}
+
+.auto5 {
+    grid-area: auto5;
+}
+
+.auto6 {
+    grid-area: auto6;
+}
+
+/* organizacion de imagen */
+
+.containerAutos img {
+    width: 100%;
+    border: 2px solid black;
+    border-radius: 8px;
+    height: 380px;
+}
+
+
+.divauto1 {
+    background-color: aliceblue;
+    border: 3px solid black;
+    border-radius: 7px;
+    width: 100%;
+    
+}
+
+h4, h5{
+    text-align: center;
+    font-style: italic;
+}
+
+
