@@ -18,7 +18,7 @@ function seleccionarAuto(opcion){
 alert("Bienvenid@ a 'TU AUTO HOY'");
 
 function seleccionarOpcion() {
-  let opcion = prompt("Ingrese la opción del auto que desea comprar");
+  let opcion = parseInt(prompt("Ingrese la opción del auto que desea comprar"));
   let autoElegido = seleccionarAuto(opcion);
   console.log(autoElegido);
   alert("Seleccionaste un " + autoElegido.marca + " " + autoElegido.nombre);
@@ -29,7 +29,7 @@ function seleccionarOpcion() {
 
     if (seguros === true) {
         
-      let cuotas = prompt("Seleccione la cantidad de cuotas (hasta 72 cuotas)");
+      let cuotas = parseInt(prompt("Seleccione la cantidad de cuotas (hasta 72 cuotas)"));
       if (cuotas<=72){
       calcularCuotas(autoElegido, cuotas);}
         else 
